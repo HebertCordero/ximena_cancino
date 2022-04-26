@@ -1,12 +1,11 @@
 <!DOCTYPE html>
+
 <head>
     <html lang='en'>
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Ximena Cancino</title>
-    <!-- Nunito -->
-    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <!-- - - CSS Swiper Library - - -->
     <link rel='stylesheet' href='https://site.innovasport.com/ux/ux-desarrollos/swiper.css'>
     <!-- - - JS Swiper Library - - -->
@@ -17,15 +16,102 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet'>
     <link href='https://hebertcordero.s3.amazonaws.com/fonts/montserrat/Montserrat-Regular.ttf' rel='stylesheet'>
 </head>
+
 <body>
     <header>
-        <div class="xc-logo">Ximena Cancino</div>
+        <a href="#">
+            <h1 class="xc-logo">Ximena Cancino</h1>
+        </a>
     </header>
     <main>
-        <div class="xc-cover"></div>
+        <div class="xc-banner"></div>
+        <div class="xc-section">
+            <h2 class="xc-title">
+                <div class="xc-title-wrapper"><span>Proyectos</span></div>
+            </h2>
+        </div>
+        <section class="xc-projects">
+            <div class="swiper myProjects">
+                <div class="swiper-wrapper">
+                    <div class="xc-project__slide swiper-slide">
+                        <picture>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/1.jpg' media='(max-width: 699px)'>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/1.jpg' media='(min-width: 700px) and (max-width: 1199px)'>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/1.jpg' media='(min-width: 1200px)'>
+                            <img class='cx-img' src='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/1.jpg' alt='ALT TEXT!' />
+                        </picture>
+                        <div class="xc-project__info">
+                            <h3>Proyecto 1</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed maxime quod nostrum amet, ad nam?</p>
+                        </div>
+                    </div>
+                    <div class="xc-project__slide swiper-slide">
+                        <picture>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/2.jpg' media='(max-width: 699px)'>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/2.jpg' media='(min-width: 700px) and (max-width: 1199px)'>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/2.jpg' media='(min-width: 1200px)'>
+                            <img class='cx-img' src='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/2.jpg' alt='ALT TEXT!' />
+                        </picture>
+                        <div class="xc-project__info">
+                            <h3>Proyecto 2</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed maxime quod nostrum amet, ad nam?</p>
+                        </div>
+                    </div>
+                    <div class="xc-project__slide swiper-slide">
+                        <picture>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/3.jpg' media='(max-width: 699px)'>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/3.jpg' media='(min-width: 700px) and (max-width: 1199px)'>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/3.jpg' media='(min-width: 1200px)'>
+                            <img class='cx-img' src='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/3.jpg' alt='ALT TEXT!' />
+                        </picture>
+                        <div class="xc-project__info">
+                            <h3>Proyecto 3</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed maxime quod nostrum amet, ad nam?</p>
+                        </div>
+                    </div>
+                    <div class="xc-project__slide swiper-slide">
+                        <picture>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/4.jpg' media='(max-width: 699px)'>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/4.jpg' media='(min-width: 700px) and (max-width: 1199px)'>
+                            <source class='cx-img' srcset='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/4.jpg' media='(min-width: 1200px)'>
+                            <img class='cx-img' src='https://hebertcordero.s3.amazonaws.com/ximena-cancino/covers/4.jpg' alt='ALT TEXT!' />
+                        </picture>
+                        <div class="xc-project__info">
+                            <h3>Proyecto 4</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed maxime quod nostrum amet, ad nam?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
     </main>
     <footer>
 
     </footer>
 </body>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".myProjects", {
+        slidesPerView: 1.5,
+        spaceBetween: 15,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            // when window width is <= 499px
+            700: {
+                slidesPerView: 3.5,
+                spaceBetweenSlides: 15,
+            },
+            999: {
+                slidesPerView: 4,
+                spaceBetweenSlides: 15,
+                centeredSlidesBounds: true,
+            },
+        }
+    });
+</script>
+
 </html>
