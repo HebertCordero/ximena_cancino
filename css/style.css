@@ -15,10 +15,12 @@
 --secondary-font: 'MinionPro', 'Open Sans', sans-serif;
 /* Theme */
 --EerieBlack: #151515;
---Asparagus: #c3cfc1;
---AirSuperior: #9fa5bb;
+--Secondary: #c3cfc1;
+--Primary: #9fa5bb;
+--PrimaryDark: #70768b;
+--PrimaryLight: #e6e9e5;
 --CelestialWhite: #f5f5f5;
---swiper-theme-color: #151515;
+--swiper-theme-color: var(--PrimaryDark);
 /* FontSizes */
 --headline1-font-size: 96px;
 --headline2-font-size: 60px;
@@ -63,7 +65,7 @@ header {
     padding: 10px;
     height: auto;
     width: 100%;
-    background: var(--EerieBlack);
+    background: var(--PrimaryDark);
     display: flex;
     box-sizing: border-box;
     flex-direction: row;
@@ -90,19 +92,20 @@ header > a > span {
 /* content */
 main {
     overflow: hidden;
-    background-color: var(--CelestialWhite);
+    background-color: var(--PrimaryLight);
 }
 .xc-banner {
     width: 100%;
     height: 400px;
     position: relative;
     background: url(https://hebertcordero.s3.amazonaws.com/ximena-cancino/banner.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat;
     background-position: center;
     margin-bottom: 40px;
 }
 .xc-banner:after {
+    cursor: pointer;
     content: "";
     position: absolute;
     background: rgb(255, 255, 255);
@@ -155,7 +158,7 @@ main {
     margin-bottom: 10px;
 }
 .xc-title::before {
-    border-top: 1px solid var(--EerieBlack);
+    border-top: 1px solid var(--Primary);
     content: "";
     margin: 0 auto;
     position: absolute;
@@ -172,9 +175,10 @@ main {
     align-content: center;
 }
 .xc-title div span {
-    background: var(--CelestialWhite);
+    color: var(--EerieBlack);
+    background: var(--PrimaryLight);
     padding: 5px 8px;
-    border: 1px solid var(--EerieBlack);
+    border: 1px solid var(--Primary);
     left: 20px;
     position: relative;
     display: flex;
@@ -195,11 +199,12 @@ main {
     position: relative;
 }
 .xc-project__slide {
-    border: 1px solid var(--EerieBlack);
+    border: 1px solid var(--PrimaryDark);
     cursor: pointer;
 }
 .xc-project__info {
     padding: 15px;
+    background: var(--Primary);
 }
 .xc-project__info > h2 {
     font-size: var(--subtitle1-font-size);
@@ -227,18 +232,18 @@ main {
 }
 .xc-about__wrapper {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
 }
 
 /* About */
 .xc-about {
-    padding: 10px 20px 20px 20px;
+    padding: 10px 20px 50px 20px;
 }
 .xc-about__img {
     width: fit-content;
 }
 .xc-about__img > picture > .cx-img {
-    border: 1px solid var(--EerieBlack);
+    border: 1px solid var(--Primary);
 }
 .xc-about__info > h2 {
     margin-top: 10px;
@@ -248,12 +253,32 @@ main {
     margin-bottom: 10px;
     font-size: var(--subtitle2-font-size);
 }
+.xc-about__info {
+    margin-top: 10px;
+}
 
 /* Footer */
 footer {
-    padding: 20px;
-    background-color: var(--EerieBlack);
+    background-color: var(--PrimaryDark);
     color: var(--CelestialWhite);
+}
+.xc-fooerText {
+    padding: 30px 20px 20px 20px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+.xc-socialMedia {
+    padding: 20px 20px 40px 20px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+}
+.xc-socialMedia > a:hover{
+    background: var(--Primary);
 }
 
 @media screen and (min-width: 350px) {
@@ -272,6 +297,24 @@ footer {
     .xc-about__wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
         gap: 15px;
+    }
+    .xc-socialMedia { 
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 15px;
+    }
+    .xc-socialMedia > a { 
+        display: flex;
+        width: 155px;
+        height: 50px;
+        border: 1px solid white;
+        justify-content: center;
+        align-items: center;
+    }
+    .xc-about__info {
+        margin-top: 0px;
     }
 }
