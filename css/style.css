@@ -65,7 +65,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* HEADER */
+/* HEADERR */
 header {
     padding: 10px;
     height: auto;
@@ -95,7 +95,7 @@ header > a > div {
     font-size: var(--headline5-font-size);
 }
 
-/* content */
+/* Content */
 main {
     overflow: hidden;
     background-color: var(--PrimaryLight);
